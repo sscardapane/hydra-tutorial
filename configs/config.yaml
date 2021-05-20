@@ -1,0 +1,22 @@
+
+# Dataset configuration
+dataset:
+  image:
+    size: 124
+    channels: 3
+  classes: 10
+
+feature_extractor:
+  _target_: tensorflow.keras.applications.EfficientNetB0
+  include_top: False
+
+  # Value interpolation
+  input_shape:
+    - ${dataset.image.size}
+    - ${dataset.image.size}
+    - ${dataset.image.channels}
+  classes: ${dataset.classes}
+
+defaults:
+  - config_schema
+  - classifier: small

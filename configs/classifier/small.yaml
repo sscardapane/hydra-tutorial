@@ -1,0 +1,6 @@
+pooling:
+  _target_: tensorflow.keras.layers.GlobalAveragePooling2D
+
+dense:
+  _target_: tensorflow.keras.layers.Dense
+  units: ${dataset.classes}

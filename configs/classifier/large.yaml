@@ -1,0 +1,15 @@
+conv:
+  _target_: tensorflow.keras.layers.Conv2D
+  filters: 128
+  kernel_size: 3
+
+pooling:
+  _target_: tensorflow.keras.layers.GlobalAveragePooling2D
+
+dense1:
+  _target_: tensorflow.keras.layers.Dense
+  units: 100
+
+dense2:
+  _target_: tensorflow.keras.layers.Dense
+  units: ${dataset.classes}
