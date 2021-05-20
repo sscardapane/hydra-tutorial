@@ -1,6 +1,6 @@
 ## Tutorial: Learning Hydra for configuring ML experiments
 
-[Blog post](https://sscardapane.it/tutorials/hydra-tutorial/) [Hydra documentation](https://hydra.cc/docs/next/tutorials/structured_config/schema)
+[[Blog post](https://sscardapane.it/tutorials/hydra-tutorial/)] [[Hydra documentation](https://hydra.cc/docs/next/tutorials/structured_config/schema)]
 
 This is the companion code for my [blog post](https://sscardapane.it/tutorials/hydra-tutorial/) on using Hydra for configuring machine learning experiments.
 
