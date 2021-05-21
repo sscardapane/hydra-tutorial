@@ -1,6 +1,9 @@
-pooling:
-  _target_: tensorflow.keras.layers.GlobalAveragePooling2D
+dense1:
+  _target_: torch.nn.Linear
+  in_features: 9216
+  out_features: 100
 
-dense:
-  _target_: tensorflow.keras.layers.Dense
-  units: ${dataset.classes}
+dense2:
+  _target_: torch.nn.Linear
+  in_features: ${classifier.dense1.out_features}
+  out_features: ${dataset.classes}

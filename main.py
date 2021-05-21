@@ -30,7 +30,7 @@ cs.store(name="config_schema", node=MainConfig)
 def train(cfg: DictConfig):
 
     # Print the configuration
-    print(OmegaConf.to_yaml(cfg))
+    print(OmegaConf.to_yaml(cfg, resolve=True))
 
     # Log the current working directory
     logger.info(f'Working dir: {os.getcwd()}')

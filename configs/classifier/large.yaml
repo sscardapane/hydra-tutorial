@@ -1,15 +1,22 @@
-conv:
-  _target_: tensorflow.keras.layers.Conv2D
-  filters: 128
-  kernel_size: 3
-
-pooling:
-  _target_: tensorflow.keras.layers.GlobalAveragePooling2D
-
 dense1:
-  _target_: tensorflow.keras.layers.Dense
-  units: 100
+  _target_: torch.nn.Linear
+  in_features: 9216
+  out_features: 100
+
+drop1:
+  _target_: torch.nn.Dropout
+  p: 0.5
 
 dense2:
-  _target_: tensorflow.keras.layers.Dense
-  units: ${dataset.classes}
+  _target_: torch.nn.Linear
+  in_features: ${classifier.dense1.out_features}
+  out_features: 100
+
+drop2:
+  _target_: torch.nn.Dropout
+  p: 0.5
+
+dense3:
+  _target_: torch.nn.Linear
+  in_features: ${classifier.dense1.out_features}
+  out_features: ${dataset.classes}
